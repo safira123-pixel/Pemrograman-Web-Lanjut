@@ -33,6 +33,7 @@ use App\Http\Controllers\HalamanAboutUsController;
 //     echo "TI2H";
 // });
 
+
 // Route::get('/articles/{id}', function ($id) {
 //     echo "ini adalah halaman artikel dengan ID : 123456". $id;
 // });
