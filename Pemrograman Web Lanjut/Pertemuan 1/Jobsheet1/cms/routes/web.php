@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\articlesController;
+use App\Http\Controllers\HalamanAboutUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,4 +51,16 @@ Route::get('/about',[aboutController::class, 'about']);
 
 Route::get('/articles/{id}',[articlesController::class, 'articles']);
 
+//Praktikum 3
 
+//HALAMAN UTAMA/HOME
+
+ //HALAMAN PRODUCT
+
+ //HALAMAN NEWS
+
+ //HALAMAN PROGRAM
+
+ //HALAMAN ABOUT US
+ Route::get('/aboutUs',[HalamanAboutUsController::class, 'aboutUs']);
+ 
