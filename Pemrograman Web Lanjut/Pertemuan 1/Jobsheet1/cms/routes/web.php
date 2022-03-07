@@ -1,10 +1,14 @@
-<?php
+<!-- <?php
 
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\PageController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\articlesController;
+use App\Http\Controllers\HalamanUtamaController;
+use App\Http\Controllers\HalamanProductController;
+use App\Http\Controllers\HalamanProgramController;
+use App\Http\Controllers\HalamanNewsController;
 use App\Http\Controllers\HalamanAboutUsController;
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +21,9 @@ use App\Http\Controllers\HalamanAboutUsController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/home', function () {
+    return view('home');
+});
 
 //praktikkum 1
 
@@ -33,7 +37,6 @@ use App\Http\Controllers\HalamanAboutUsController;
 //     echo "TI2H";
 // });
 
-
 // Route::get('/articles/{id}', function ($id) {
 //     echo "ini adalah halaman artikel dengan ID : 123456". $id;
 // });
@@ -46,22 +49,28 @@ use App\Http\Controllers\HalamanAboutUsController;
 // Route::get('/articles/{id}',[PageController::class, 'articles']);
 
 //modifikasi
-Route::get('/',[homeController::class, 'index']);
+//Route::get('/',[homeController::class, 'index']);
 
-Route::get('/about',[aboutController::class, 'about']);
+//Route::get('/about',[aboutController::class, 'about']);
 
-Route::get('/articles/{id}',[articlesController::class, 'articles']);
+//Route::get('/articles/{id}',[articlesController::class, 'articles']);
 
 //Praktikum 3
 
 //HALAMAN UTAMA/HOME
+//Route::get('/Home',[HalamanUtamaController::class, 'HalamanUtama']);
 
  //HALAMAN PRODUCT
+ 
 
  //HALAMAN NEWS
 
  //HALAMAN PROGRAM
 
  //HALAMAN ABOUT US
- Route::get('/aboutUs',[HalamanAboutUsController::class, 'aboutUs']);
+ //Route::get('/aboutUs',[HalamanAboutUsController::class, 'aboutUs']);
  
+
+//Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
