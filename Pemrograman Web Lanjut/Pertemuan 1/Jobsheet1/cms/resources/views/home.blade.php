@@ -1,30 +1,50 @@
-<!-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Perusahaan Listrik Negara</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="Pictures/LOGO.png">PLN</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="active"><a href="/products">Products</a></li>
+      <li class="active"><a href="/news">News</a></li>
+      <li class="active"><a href="/program">Program</a></li>
+      <li class="active"><a href="/about">About Us</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+	<div class="row">
+    <div >
+      <h3 >INFORMASI</h3>
+      Bagian ini memberi semua informasi terkini untuk membantu Anda melakukan transaksi listrik PLN dengan lebih efisien. Anda dapat memilih untuk pasang listrik baru, melakukan perubahan daya, dan melakukan sambungan listrik sementara maupun pengaduan gangguan dan layanan listrik lainnya. Melakukan transaksi listrik PLN tidak pernah semudah ini dengan segala sesuatu di bawah satu atap.
+      </p>
+    </div>
+  </div>
 </div>
-@endsection -->
+</body>
+</html> -->
 
-@extends('MasterLayout')
+@extends('masterLayout')
 
 @section('content')
+
+
 <!--============ Slider ============-->
 
 
@@ -33,7 +53,7 @@
            <div class="slider">
       			<ul class="slides">
     		 	 	  <li class="slide">
-                      	<h5 class="wow fadeInDown" data-wow-delay="0.8s">What is Pasta ? </h5>
+                      	<h4 class="wow fadeInDown" data-wow-delay="0.8s">What is Pasta ? </h4>
                       	<p class="wow fadeInUp" data-wow-delay="0.8s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                          the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                           type and scrambled it to make a type specimen book. It has survived not only five centuries, but
@@ -80,39 +100,24 @@
       <div class="slider">
       		    <ul class="slides">
           	 	 <li class="slide">
-                    <div class="item">
-                          <img src="images/thumb1.png" width="226" height="225" alt="sliderimg" class="wow flipInX"
+                  @foreach ($posts as $post)
+                    <div class="{{$post->slug}}">
+                          <img src="images/{{$post->image}}.png" width="226" height="225" alt="sliderimg" class="wow flipInX"
                            data-wow-delay=".8s"> 
-                          <h3>Pasta Capellini</h3>
+                          <h3>{{$post->name}}</h3>
                       </div> <!-- end of item-->
-                      
-                   <div class="item2">
-                          <img src="images/thumb2.jpg" width="226" height="225" alt="sliderimg" class="wow flipInX"
-                           data-wow-delay=".8s"> 
-                          <h3>Pasta Pillus</h3>
-                      </div> <!-- end of item-->
-                      
-                   <div class="item3">
-                          <img src="images/thumb3.png" width="226" height="225" alt="sliderimg" class="wow flipInX"
-                           data-wow-delay=".8s"> 
-                          <h3>Pasta Fusilli</h3>
-                      </div> <!-- end of item-->
+                  @endforeach
+                   
                   </li>
                    <li class="slide">
-                    <div class="item">
-                          <img src="images/thumb1.png" width="226" height="225" alt="sliderimg" > 
-                          <h3>Pasta Capellini</h3>
+                    
+                      @foreach ($posts as $post)
+                    <div class="{{$post->slug}}">
+                          <img src="images/{{$post->image}}.png" width="226" height="225" alt="sliderimg" class="wow flipInX"
+                           data-wow-delay=".8s"> 
+                          <h3>{{$post->name}}</h3>
                       </div> <!-- end of item-->
-                      
-                   <div class="item2">
-                          <img src="images/thumb2.jpg" width="226" height="225" alt="sliderimg"> 
-                          <h3>Pasta Pillus</h3>
-                      </div> <!-- end of item-->
-                      
-                   <div class="item3">
-                          <img src="images/thumb3.png" width="226" height="225" alt="sliderimg"> 
-                          <h3>Pasta Fusilli</h3>
-                      </div> <!-- end of item-->
+                  @endforeach
                   </li>
                    
         </ul>
@@ -199,5 +204,4 @@
     <!--contactus class-->
 </div> <!-- end of contact wrapper-->
 
-
-@section('content')
+@endsection
