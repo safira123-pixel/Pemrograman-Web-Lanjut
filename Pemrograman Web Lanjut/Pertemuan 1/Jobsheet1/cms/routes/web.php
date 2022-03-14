@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
@@ -10,6 +10,7 @@ use App\Http\Controllers\HalamanProductController;
 use App\Http\Controllers\HalamanProgramController;
 use App\Http\Controllers\HalamanNewsController;
 use App\Http\Controllers\HalamanAboutUsController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +22,9 @@ use App\Http\Controllers\HalamanAboutUsController;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 //praktikkum 1
 
@@ -74,3 +75,5 @@ Route::get('/home', function () {
 //Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\PostController::class, 'index']);
