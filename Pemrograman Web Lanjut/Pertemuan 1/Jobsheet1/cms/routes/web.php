@@ -11,6 +11,7 @@ use App\Http\Controllers\HalamanProgramController;
 use App\Http\Controllers\HalamanNewsController;
 use App\Http\Controllers\HalamanAboutUsController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,8 +73,8 @@ use App\Http\Controllers\PostController;
  //Route::get('/aboutUs',[HalamanAboutUsController::class, 'aboutUs']);
  
 
-//Auth::routes();
+Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\PostController::class, 'index']);
+//Route::get('/home', [App\Http\Controllers\PostController::class, 'index']);
