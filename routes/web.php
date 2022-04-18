@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\aboutController;
-use App\Http\Controllers\articlesController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HalamanUtamaController;
 use App\Http\Controllers\HalamanProductController;
 use App\Http\Controllers\HalamanProgramController;
@@ -73,9 +73,10 @@ use App\Http\Controllers\LoginController;
  //Route::get('/aboutUs',[HalamanAboutUsController::class, 'aboutUs']);
  
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('articles', ArticleController::class);
 
 //Route::get('/home', [App\Http\Controllers\PostController::class, 'index']);
 
