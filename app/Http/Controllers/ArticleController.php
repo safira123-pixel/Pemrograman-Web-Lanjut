@@ -17,7 +17,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        return view('articles.index', ['articles' => $articles]);
+        return view('articles.index', compact('articles'));
     }
 
     /**
@@ -42,15 +42,6 @@ class ArticleController extends Controller
             $image_name = $request->file('image')->store('image', 'public');
         }
 
-    //     $image_name = 'default.png';
-
-    // if ($request->hasFile('image')) {
-    //     $image = $request->file('image');
-    //     $image_name = $image->getClientOriginalName();
-    //     $image->move(public_path('images/images'), $image_name);
-
-    //}
-        
         Article::create([
             'title' => $request->title,
             'content' => $request->content,

@@ -9,9 +9,6 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected $fillabel = [
-        'title',
-        'content',
-        'featured_image'
-    ];
+    protected $fillabel = [ 'title', 'content', 'featured_image' ];
+    protected $guarded=[];
 }
