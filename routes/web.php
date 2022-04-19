@@ -76,8 +76,10 @@ use App\Http\Controllers\LoginController;
 //Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('articles', ArticleController::class);
+
 
 //Route::get('/home', [App\Http\Controllers\PostController::class, 'index']);
 
 //Route::resource('mahasiswa', MahasiswaController::class);
+Route::resource('articles', ArticleController::class);
+Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf'])->name('cetak_pdf');

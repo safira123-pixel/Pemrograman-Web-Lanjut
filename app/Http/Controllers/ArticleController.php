@@ -116,7 +116,7 @@ class ArticleController extends Controller
     public function cetak_pdf(){
         // dd('tetsing');
         $articles = Article::all();
-        $pdf = PDF::loadview('js10.articles_pdf', compact('articles'));
+        $pdf = PDF::loadview('articles.pdf', compact('articles'));
         return $pdf->stream();
     }
 }
